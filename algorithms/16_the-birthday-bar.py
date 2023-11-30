@@ -50,11 +50,11 @@ def birthday(s, d, m):
     #     while(n<(m)):
     #         count+=s[i+n]
     #         n+=1
-    #         if(count==d):
-    #             ti+=1
-    #         if(i+n==len(s)):
-    #             break
-    #     return ti
+    #     if(count==d):
+    #         ti+=1
+    #     if(i+n==len(s)):
+    #         break
+    # return ti
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
