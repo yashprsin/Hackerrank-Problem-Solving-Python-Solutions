@@ -9,19 +9,21 @@ import sys
 def getMoneySpent(keyboards, drives, b):
     #
     # Write your code here.
-    #
-    ls = []
-    for i in range(len(keyboards)):
-        for j in range(len(drives)):
-            total = keyboards[i]+drives[j]
-            if b>=total:
-                ls.append(total)
-    try:
-        jo = max(ls)
-        if jo<=b:
-            return jo
-    except:
-        return -1
+    # Method 1
+    # ls = []
+    # for i in range(len(keyboards)):
+    #     for j in range(len(drives)):
+    #         total = keyboards[i]+drives[j]
+    #         if b>=total:
+    #             ls.append(total)
+    # try:
+    #     jo = max(ls)
+    #     if jo<=b:
+    #         return jo
+    # except:
+    #     return -1
+    # Method 2
+    return max([sum([i,j]) for i in keyboards for j in drives if sum([i,j])<=b]+[-1])
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
