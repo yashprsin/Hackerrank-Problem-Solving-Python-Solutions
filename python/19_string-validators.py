@@ -21,5 +21,3 @@ if __name__ == '__main__':
     print(cd)
     print(cl)
     print(cu)
-
-u  = 1 1 1 1 1 1
