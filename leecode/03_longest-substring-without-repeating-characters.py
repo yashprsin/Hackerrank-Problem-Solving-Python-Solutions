@@ -1,9 +1,13 @@
-s = "abcabcbb"
-count = 0
-n = int(len(s))
-res = 0
-for i in range(n):
-    so = s[i:]
-    if so in s:
-        res += 1
-    print(res)
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        start = result = 0
+        seen = {}
+        for i, letter in enumerate(s):
+            if seen.get(letter, -1) >= start:
+                start = seen[letter] + 1
+            result = max(result, i - start + 1)
+            seen[letter] = i
+        return result
+    
+k = Solution()
+k.lengthOfLongestSubstring("abcabcbb")
